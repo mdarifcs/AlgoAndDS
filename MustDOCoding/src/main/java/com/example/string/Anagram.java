@@ -16,7 +16,7 @@ public class Anagram {
 		if (str1.length() != str2.length())
 			return false;
 
-		char arr[] = new char[26];
+		char arr[] = new char[1<<8];
 		for (int i = 0; i < str1.length(); i++) {
 			arr[str1.charAt(i)-'a'] += 1;
 			arr[str2.charAt(i)-'a'] -= 1;
