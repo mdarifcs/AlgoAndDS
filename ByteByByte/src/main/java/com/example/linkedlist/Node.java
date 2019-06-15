@@ -3,6 +3,7 @@ package com.example.linkedlist;
 public class Node {
 	int  data;
 	Node next;
+	Node secondMax;
 	
 	public Node() {
 	}
@@ -24,9 +25,14 @@ public class Node {
 	
 	public static void printAllNodes(Node head) {
 		while (head!=null) {
-			System.out.print(head.data+" -> ");
+			System.out.print(head.data+printSecondMax(head.secondMax)+" -> ");
 			head = head.next;
 		}
 		System.out.println("NULL");
+	}
+	
+	public static String printSecondMax(Node secondmax) {
+		if (secondmax == null) return "";
+		return "{"+String.valueOf(secondmax.data)+"}";
 	}
 }
