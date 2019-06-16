@@ -1,8 +1,5 @@
 package com.example.linkedlist;
 
-import java.awt.SecondaryLoop;
-import java.io.ObjectInputStream.GetField;
-
 /**
  * @author mohammad.arif Design a stack with a push, pop and max function which
  *         returns the max value in the stack, all of which are run in o(1)

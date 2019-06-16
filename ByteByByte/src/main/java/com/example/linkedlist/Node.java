@@ -4,6 +4,7 @@ public class Node {
 	int  data;
 	Node next;
 	Node secondMax;
+	boolean mark;
 	static Node tail;
 	
 	public Node() {
@@ -34,6 +35,6 @@ public class Node {
 	
 	public static String printSecondMax(Node secondmax) {
 		if (secondmax == null) return "";
-		return "{"+String.valueOf(secondmax.data)+"}";
+		return "{"+String.valueOf(secondmax.data)+"}{"+secondmax.mark+"}";
 	}
 }
