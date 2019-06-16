@@ -4,6 +4,7 @@ public class Node {
 	int  data;
 	Node next;
 	Node secondMax;
+	static Node tail;
 	
 	public Node() {
 	}
