@@ -13,10 +13,10 @@ import java.lang.reflect.InvocationTargetException;
 public class BreakSingleton {
 
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		breakSingletonByUsingRefelection();
+		// breakSingletonByUsingRefelection();
 		// breakSingletonByUsingSerialization();
 		// singletonByUsingEnum();
-		// breakSingletonByCloning();
+		 breakSingletonByCloning();
 	}
 
 	private static void breakSingletonByCloning() {
