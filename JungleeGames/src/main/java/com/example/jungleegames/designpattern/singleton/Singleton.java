@@ -20,9 +20,10 @@ public class Singleton implements Serializable, Cloneable {
 	 * constructor
 	 */
 	private Singleton() {
-		if (singleton != null) {
+		/*if (singleton != null) {
 			throw new RuntimeException("Use getInstance() method to get the single instance of this class.");
-		}
+		}*/
+		System.setSecurityManager(new SecurityManager());
 	}
 	
 	public static Singleton getInstance() {

@@ -11,14 +11,14 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class BreakSingleton {
-	
-	public static void main(String[] args) {
-		//breakSingletonByUsingRefelection();
-		//breakSingletonByUsingSerialization();
-		//singletonByUsingEnum();
-		//breakSingletonByCloning();
+
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		breakSingletonByUsingRefelection();
+		// breakSingletonByUsingSerialization();
+		// singletonByUsingEnum();
+		// breakSingletonByCloning();
 	}
-	
+
 	private static void breakSingletonByCloning() {
 		Singleton instance1 = Singleton.getInstance();
 		Singleton instance2 = null;
@@ -28,8 +28,8 @@ public class BreakSingleton {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("instance1 "+ instance1.hashCode());
-		System.out.println("instance2 "+instance2.hashCode());
+		System.out.println("instance1 " + instance1.hashCode());
+		System.out.println("instance2 " + instance2.hashCode());
 	}
 
 	private static void singletonByUsingEnum() {
@@ -45,44 +45,51 @@ public class BreakSingleton {
 	private static void breakSingletonByUsingSerialization() {
 		Singleton instance1 = Singleton.getInstance();
 		Singleton instance2 = null;
-		
+
 		try {
-			//serialize
+			// serialize
 			ObjectOutput out = new ObjectOutputStream(new FileOutputStream("D:/serialization/serialize.txt"));
 			out.writeObject(instance1);
 			out.close();
-			
-			//deserialize
+
+			// deserialize
 			ObjectInput in = new ObjectInputStream(new FileInputStream("D:/serialization/serialize.txt"));
 			instance2 = (Singleton) in.readObject();
 			in.close();
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		System.out.println("instance1 hascode " + instance1.hashCode());
 		System.out.println("instance2 hascode " + instance2.hashCode());
 	}
 
-	private static void breakSingletonByUsingRefelection() {
-		Singleton instance1 = Singleton.getInstance();
+	private static void breakSingletonByUsingRefelection() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 
-		Singleton instance2 = null;
-
-		Class<Singleton> clazz = Singleton.class;
-		Constructor<Singleton> cons;
-		try {
-			cons = clazz.getDeclaredConstructor();
-			cons.setAccessible(true);
-			instance2 = cons.newInstance();
-		} catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException
-				| IllegalArgumentException | InvocationTargetException e) {
-			e.printStackTrace();
-		}
-
-		System.out.println("instance1 hascode " + instance1.hashCode());
-		System.out.println("instance2 hascode " + instance2.hashCode());
+		Constructor<?>[] constructors = Singleton.class.getDeclaredConstructors();
+		Constructor theConstructor = constructors[0];
+		theConstructor.setAccessible(true);
+		Singleton instance1 = (Singleton) theConstructor.newInstance();
+		Singleton instance2 = (Singleton) theConstructor.newInstance();
+		System.out.println(instance1);
+		System.out.println(instance2);
+//		Singleton instance1 = Singleton.getInstance();
+//
+//		Singleton instance2 = null;
+//
+//		Class<Singleton> clazz = Singleton.class;
+//		Constructor<Singleton> cons;
+//		try {
+//			cons = clazz.getDeclaredConstructor();
+//			cons.setAccessible(true);
+//			instance2 = cons.newInstance();
+//		} catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException
+//				| IllegalArgumentException | InvocationTargetException e) {
+//			e.printStackTrace();
+//		}
+//
+//		System.out.println("instance1 hascode " + instance1.hashCode());
+//		System.out.println("instance2 hascode " + instance2.hashCode());
 
 	}
 }
