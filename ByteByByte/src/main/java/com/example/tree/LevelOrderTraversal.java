@@ -25,6 +25,7 @@ public class LevelOrderTraversal {
 		if (root==null) return;
 		if (i==1) {
 			System.out.print(root.data+" ");
+			return;
 		}
 		levelOreder(root.left, i-1);
 		levelOreder(root.right, i-1);
