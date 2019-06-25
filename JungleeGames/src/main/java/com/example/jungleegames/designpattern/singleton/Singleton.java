@@ -13,6 +13,9 @@ public class Singleton implements Serializable, Cloneable {
 	 */
 	private static volatile Singleton singleton;
 	
+	public String x = "default";
+	public int y = 0;
+	
 	/*
 	 * use null check in constructor to avoid instantiation using reflection. You can
 	 * make the new instance of the Singleton class by changing the constructor
