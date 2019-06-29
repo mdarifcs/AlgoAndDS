@@ -9,7 +9,6 @@ public class LaptopFactory implements ComputerAbstractFactory {
 	String CPU;
 	
 	public LaptopFactory(String ram, String hdd, String CPU) {
-		super();
 		this.ram = ram;
 		this.hdd = hdd;
 		this.CPU = CPU;
