@@ -12,9 +12,19 @@ public class RemoveDuplicates {
 	public static void main(String[] args) {
 		Node head = Node.createLinkedList(new int[] { 1, 2, 3, 4, 7, 2, 4, 6, 4 });
 		Node.printAllNodes(head);
+//		changeHead(head);
+//		System.out.println("after chenging head");
+//		Node.printAllNodes(head);
 		removeDup(head);
 		System.out.print("after removing duplicates: ");
 		Node.printAllNodes(head);
+	}
+
+	private static void changeHead(Node head) {
+		while (head!=null) {
+			head = head.next;
+		}
+		
 	}
 
 	private static void removeDup(Node head) {
