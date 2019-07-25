@@ -3,7 +3,7 @@ package com.example.linkedlist;
 /**
  * @author mohammad.arif
  * Given a linked list where each node has two pointers,
- * one to the nest node and one to a random node in the list,
+ * one to the next node and one to a random node in the list,
  * write a function to clone the linked list.
  * 1 -> 2 -> 3 -> 4 -> null
  * v    v    v    v
