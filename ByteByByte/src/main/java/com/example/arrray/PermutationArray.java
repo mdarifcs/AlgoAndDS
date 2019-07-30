@@ -8,10 +8,7 @@ public class PermutationArray {
 
 	public static void main(String[] args) {
 		int[] arr = {1,2,3}; 
-		getPermutations(arr).stream().forEach(e->{
-			Arrays.stream(e).forEach(i->System.out.print(i+","));
-			System.out.println();
-		});
+		getPermutations(arr).stream().forEach(e->System.out.println(Arrays.toString(e)));
 	}
 
 	public static List<int[]> getPermutations(int[] arr) {
@@ -37,7 +34,4 @@ public class PermutationArray {
 		arr[i] = arr[j];
 		arr[j] = tmp;
 	}
-	
-	
-
 }
