@@ -12,7 +12,7 @@ public class ZeroSumSubarray {
 		if (subArr== null)
 			System.out.println("sub array not found");
 		else
-			Arrays.stream(subArr).forEach(e->System.out.print(e+","));
+			System.out.println(Arrays.toString(subArr));
 	}
 
 	private static int[] getZeroSumSubarray(int[] arr) {
