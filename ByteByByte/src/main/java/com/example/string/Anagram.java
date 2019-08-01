@@ -1,5 +1,9 @@
 package com.example.string;
 
+/**
+ * @author mohammad.arif
+ * Given two strings, write a function to determine weather they are anagrams
+ */
 public class Anagram {
 
 	public static void main(String[] args) {

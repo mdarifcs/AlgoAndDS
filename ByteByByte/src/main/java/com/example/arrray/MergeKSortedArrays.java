@@ -10,6 +10,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * @author mohammad.arif
+ * Given K sorted Arrays, merge them into a single array.
+ */
 public class MergeKSortedArrays {
 
 	public static void main(String[] args) {

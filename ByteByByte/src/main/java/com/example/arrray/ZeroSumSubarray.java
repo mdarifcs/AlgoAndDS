@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author mohammad.arif
+ * Given an array, write a function to find subarray that sums to zero, if one exists
+ */
 public class ZeroSumSubarray {
 
 	public static void main(String[] args) {
