@@ -1,9 +1,7 @@
 package com.example.jungleegames.designpattern.observer.pushpull;
 
-public class WindowDisplay implements IDisplay, IObserver {
+public class WindowDisplay implements IObserver {
 	private IObservable observable;
-	private int temperature = 0;
-	private int pressure = 0;
 	
 	public WindowDisplay(IObservable observable) {
 		this.observable = observable;
@@ -14,15 +12,7 @@ public class WindowDisplay implements IDisplay, IObserver {
 	public void update() {
 		if (this.observable instanceof WeatherData) {
 			WeatherData weatherData = (WeatherData) observable;
-			this.temperature = weatherData.getTemperature();
-			this.pressure = weatherData.getPressure();
+			System.out.println("This is window display and temprature "+weatherData.getTemperature()+" and pressure "+weatherData.getPressure());
 		}
-		display();
 	}
-
-	@Override
-	public void display() {
-		System.out.println("This is window display and temprature "+temperature+" and pressure "+pressure);
-	}
-
 }

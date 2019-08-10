@@ -1,7 +1,7 @@
 package com.example.jungleegames.designpattern.observer.pushpushsimple;
 
 public class WindowDisplay implements IObserver{
-	IObservable observable;
+	private IObservable observable;
 	
 	public WindowDisplay(IObservable observable) {
 		this.observable = observable;

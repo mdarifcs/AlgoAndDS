@@ -1,7 +1,7 @@
 package com.example.jungleegames.designpattern.observer.pushpushsimple;
 
 public class MobileDisplay implements IObserver{
-	IObservable observable;
+	private IObservable observable;
 	
 	public MobileDisplay(IObservable observable) {
 		this.observable = observable;
