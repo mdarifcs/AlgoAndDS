@@ -1,5 +1,6 @@
 package com.example.jungleegames.designpattern.factory;
 
+import com.example.jungleegames.designpattern.factory.abstractfactory.ComputerAbstractFactory;
 import com.example.jungleegames.designpattern.factory.abstractfactory.ComputerFactory;
 import com.example.jungleegames.designpattern.factory.abstractfactory.LaptopFactory;
 import com.example.jungleegames.designpattern.factory.abstractfactory.PCFactory;
@@ -15,7 +16,8 @@ public class ComputerClient {
 		System.out.println(server);*/
 		
 		//abstract factory
-		Computer pc = ComputerFactory.createComputer(new PCFactory("512 mb", "1 tb", "1.8 ghz"));
+		ComputerAbstractFactory caf = new PCFactory("512 mb", "1 tb", "1.8 ghz");
+		Computer pc = ComputerFactory.createComputer(caf);
 		System.out.println(pc);
 		Computer server = ComputerFactory.createComputer(new ServerFactory("32 gb", "4 tb", "3.4 ghz"));
 		System.out.println(server);
