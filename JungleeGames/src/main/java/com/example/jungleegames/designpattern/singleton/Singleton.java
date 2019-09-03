@@ -9,7 +9,7 @@ public class Singleton implements Serializable, Cloneable {
 	 * Without volatile modifier, it’s possible for another thread in Java to see
 	 * half initialized state of singleton instance variable, but with volatile variable
 	 * guaranteeing happens-before relationship, all the write will happen on
-	 * volatile singleton instance before any read of sSoleInstance variable.
+	 * volatile singleton instance before any read of singleInstance variable.
 	 */
 	private static volatile Singleton singleton;
 	
